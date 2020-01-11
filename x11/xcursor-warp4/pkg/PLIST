@@ -1,0 +1,23 @@
+@comment $OpenBSD$
+lib/X11/icons/
+lib/X11/icons/warp4/
+lib/X11/icons/warp4/cursors/
+lib/X11/icons/warp4/cursors/08e8e1c95fe2fc01f976f1e063a24ccd
+lib/X11/icons/warp4/cursors/bottom_left_corner
+lib/X11/icons/warp4/cursors/bottom_right_corner
+lib/X11/icons/warp4/cursors/bottom_side
+lib/X11/icons/warp4/cursors/clock
+lib/X11/icons/warp4/cursors/cross
+lib/X11/icons/warp4/cursors/fleur
+lib/X11/icons/warp4/cursors/hand2
+lib/X11/icons/warp4/cursors/left_ptr
+lib/X11/icons/warp4/cursors/left_ptr_watch
+lib/X11/icons/warp4/cursors/left_side
+lib/X11/icons/warp4/cursors/right_side
+lib/X11/icons/warp4/cursors/sb_h_double_arrow
+lib/X11/icons/warp4/cursors/sb_v_double_arrow
+lib/X11/icons/warp4/cursors/top_left_corner
+lib/X11/icons/warp4/cursors/top_right_corner
+lib/X11/icons/warp4/cursors/top_side
+lib/X11/icons/warp4/cursors/watch
+lib/X11/icons/warp4/cursors/xterm
