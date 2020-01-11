@@ -1,0 +1,21 @@
+$OpenBSD$
+--- Engine/Makefile.orig	Thu Sep 15 20:25:50 2016
++++ Engine/Makefile	Thu Oct 20 02:48:06 2016
+@@ -8,6 +8,8 @@ endif
+ 
+ ifeq ($(UNAME), Darwin)
+ include Makefile-defs.osx
++else ifeq ($(UNAME), OpenBSD)
++include Makefile-defs.obsd
+ else
+ include Makefile-defs.linux
+ endif
+@@ -59,7 +61,7 @@ clean:
+ 
+ install: ags
+ 	mkdir -p $(PREFIX)/bin
+-	cp -t $(PREFIX)/bin ags
++	cp ags $(PREFIX)/bin
+ 
+ uninstall:
+ 	rm -f $(PREFIX)/bin/ags

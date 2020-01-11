@@ -1,0 +1,30 @@
+LOCALBASE ?= /usr/local
+PREFIX ?= /usr/local
+
+CFLAGS = \
+-O2 -g -pipe -fsigned-char -Wfatal-errors \
+-DNDEBUG -DAGS_RUNTIME_PATCH_ALLEGRO -DRTLD_NEXT \
+-DAGS_CASE_SENSITIVE_FILESYSTEM -DALLEGRO_STATICLINK \
+-DLINUX_VERSION -DDISABLE_MPEG_AUDIO -DBUILTIN_PLUGINS \
+-I${LOCALBASE}/include \
+-I../Engine -I../Common -I../Common/libinclude -I../Plugins \
+`pkg-config --cflags x11 freetype2`
+
+CXXFLAGS = \
+${CFLAGS} -Wno-write-strings
+
+LIBS = \
+-rdynamic -Wl,-Bdynamic -lz -lpthread -lc -lm -lstdc++ \
+-lalleg -lalleg_unsharable -laldmb -ldumb \
+`pkg-config --libs x11 freetype2 vorbis vorbisfile ogg theora`
+
+LDFLAGS = \
+-Wl,--as-needed \
+-Wl,-z,wxneeded
+
+BASE_PLATFORM = \
+platform/linux/acpllnx.cpp \
+platform/util/pe.c \
+platform/util/libc.c
+
+CDA = 

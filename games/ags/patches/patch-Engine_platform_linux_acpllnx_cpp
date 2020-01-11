@@ -1,0 +1,40 @@
+$OpenBSD$
+--- Engine/platform/linux/acpllnx.cpp.orig	Sun Nov 13 17:47:03 2016
++++ Engine/platform/linux/acpllnx.cpp	Sun Nov 13 17:50:00 2016
+@@ -62,7 +62,11 @@ struct AGSLinux : AGSPlatformDriver {
+ 
+ 
+ int AGSLinux::CDPlayerCommand(int cmdd, int datt) {
+-  return cd_player_control(cmdd, datt);
++  #ifdef AGS_HAS_CD_AUDIO
++    return cd_player_control(cmdd, datt);
++  # else
++    return 0;
++  #endif
+ }
+ 
+ void AGSLinux::DisplayAlert(const char *text, ...) {
+@@ -154,7 +158,11 @@ eScriptSystemOSID AGSLinux::GetSystemOSID() {
+ }
+ 
+ int AGSLinux::InitializeCDPlayer() {
+-  return cd_player_init();
++  #ifdef AGS_HAS_CD_AUDIO
++    return cd_player_init();
++  # else
++    return 0;
++  #endif
+ }
+ 
+ void AGSLinux::PlayVideo(const char *name, int skip, int flags) {
+@@ -170,7 +178,9 @@ void AGSLinux::SetGameWindowIcon() {
+ }
+ 
+ void AGSLinux::ShutdownCDPlayer() {
+-  cd_exit();
++  #ifdef AGS_HAS_CD_AUDIO
++    cd_exit();
++  #endif
+ }
+ 
+ AGSPlatformDriver* AGSPlatformDriver::GetDriver() {
