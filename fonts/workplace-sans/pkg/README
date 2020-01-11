@@ -1,0 +1,9 @@
+$OpenBSD$
+
++-----------------------------------------------------------------------
+| Using ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+You can use the provided fontconfig file.
+
+# ln -s ${TRUEPREFIX}/share/workplace-sans/30-workplace-sans-aliases.conf /etc/fonts/conf.d/

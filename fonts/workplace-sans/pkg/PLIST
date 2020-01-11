@@ -1,0 +1,10 @@
+@comment $OpenBSD$
+share/doc/pkg-readmes/workplace-sans
+share/fonts/
+@fontdir share/fonts/workplace-sans/
+share/fonts/workplace-sans/wpsu.flg
+share/fonts/workplace-sans/wpsu.ttf
+share/fonts/workplace-sans/wpsu.txt
+share/fonts/workplace-sans/wpsub.ttf
+share/workplace-sans/
+share/workplace-sans/30-workplace-sans-aliases.conf
